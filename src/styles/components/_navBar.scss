@@ -1,0 +1,24 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+
+  @media (max-width: 500px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    width: 100%;
+    padding: 5px 0;
+    z-index: 100;
+  }
+}
+
+.navBar--item {
+  font-size: 30px;
+  &:hover {
+    color: $primary;
+  }
+}

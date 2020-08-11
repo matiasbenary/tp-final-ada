@@ -1,0 +1,25 @@
+.search {
+  position: relative;
+}
+
+.search--input {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  padding: 10px 40px;
+  color: $text;
+  cursor: pointer;
+}
+
+.search--icon {
+  position: absolute;
+  font-size: 28px;
+  color: $text;
+  cursor: pointer;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  &:active {
+    color: $text;
+  }
+}
