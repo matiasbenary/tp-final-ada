@@ -3,6 +3,7 @@ import CardContainer from "../CardContainer";
 import { useParams } from "react-router-dom";
 import { useSearch } from "../../utils/hooks/useSearch";
 import { useTitle } from "../../utils/hooks/useTitle";
+import Pagination from "../Pagination";
 
 const Category = () => {
   const { media, category, page } = useParams();
@@ -17,6 +18,12 @@ const Category = () => {
       <div>
         <h1>{title}</h1>
         <CardContainer cards={data.results}></CardContainer>
+        <Pagination
+          media={media}
+          category={category}
+          page={page}
+          totalPage={data.total_pages}
+        ></Pagination>
       </div>
     );
   }
