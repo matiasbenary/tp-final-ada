@@ -1,21 +1,32 @@
 import React from "react";
 import CardContainer from "../CardContainer";
-import api from "../../api";
 import { Link } from "react-router-dom";
-//media tv o movie - si es serie o pelicula
-//category top rated - esta en el aire etc
-const CategoryPreview = ({ media, category }) => {
-  return (
-    <div>
-      <Link to={`/${media}/${category}/page/1`}>
-        <h1>
-          {media} - {category}
-        </h1>
-      </Link>
+import { useTitle } from "../../utils/hooks/useTitle";
+import { useSearch } from "../../utils/hooks/useSearch";
+import { FiArrowRight } from "react-icons/fi";
 
-      <CardContainer cards={api.results.slice(0, 1)}></CardContainer>
-    </div>
-  );
+const CategoryPreview = ({ media, category }) => {
+  const [data, isLoading, isError] = useSearch(media, category);
+
+  const title = useTitle(media, category);
+
+  if (isLoading) return <h1>Cargando...</h1>;
+  if (data) {
+    return (
+      <div>
+        <Link
+          className="categoryPreview--link"
+          to={`/${media}/${category}/page/1`}
+        >
+          <h1 className="categoryPreview--title">{title}</h1>
+          <FiArrowRight className="categoryPreview--icon" />
+        </Link>
+        <CardContainer cards={data.results.slice(0, 5)}></CardContainer>
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default CategoryPreview;

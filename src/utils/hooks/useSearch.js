@@ -1,9 +1,6 @@
-import Search from "../../components/Search";
-
-const { default: Category } = require("../../components/Category");
 const { useGet } = require("./useGet");
 const { URL_BASE } = require("../../constants/api");
-
+//media="tv" search="on_the_air"
 export const useSearch = (media, search, page = 1) => {
   const endpoints = {
     trending: `trending/${media}/week`,
@@ -16,7 +13,9 @@ export const useSearch = (media, search, page = 1) => {
   /// media multi
   // search iron
   const query = media === "multi" ? `&query=${search}` : "";
+
   let endpoint;
+
   if (media === "multi") {
     endpoint = endpoints.search;
   } else {

@@ -3,7 +3,11 @@
 @import "utils/variables";
 
 @import "layout/body";
+@import "layout/container";
 
 @import "components/header";
 @import "components/navBar";
 @import "components/search";
+@import "components/cardContainer";
+@import "components/card";
+@import "components/categoryPreview";
