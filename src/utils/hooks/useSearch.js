@@ -1,30 +1,30 @@
+import { getApiUrl } from "../lib/getApiUrl";
+
 const { useGet } = require("./useGet");
 const { URL_BASE } = require("../../constants/api");
 //media="tv" search="on_the_air"
-export const useSearch = (media, search, page = 1, language = "en-US") => {
+export const useSearch = (media, search, page = 1, searchParam = "") => {
   const endpoints = {
-    trending: `trending/${media}/week`,
-    category: `${media}/${search}`,
-    search: "search/multi",
+    trending: getApiUrl(`trending/${media}/week`),
+    category: getApiUrl(`${media}/${search}`),
+    search: `${getApiUrl("search/multi")}&query=${search}`,
+    genre: `${getApiUrl(`discover/${media}`)}&with_genres=${searchParam}`,
   };
-  //trending top_rated on_the_air
-  //top_rated
+  /*
+media, search,searchParam
+[tv,movie],trending ,""
+[tv,movie],$tags,""
+multi,$query,"",
+[tv,movie],indiferente,$idGenre
 
-  /// media multi
-  // search iron
-  const query = media === "multi" ? `&query=${search}` : "";
+*/
+  const endpoint =
+    endpoints[search] ||
+    (media === "multi" && endpoints.search) ||
+    (searchParam && endpoints.genre) ||
+    endpoints.category;
 
-  let endpoint;
+  const pagedEnpoint = `${endpoint}&page=${page}`;
 
-  if (media === "multi") {
-    endpoint = endpoints.search;
-  } else {
-    endpoint = endpoints[search] ? endpoints[search] : endpoints.category;
-  }
-
-  //query=asd
-
-  return useGet(
-    `${URL_BASE}/${endpoint}?api_key=${process.env.REACT_APP_API_KEY}&page=${page}${query}&languge=${language}`
-  );
+  return useGet(pagedEnpoint);
 };

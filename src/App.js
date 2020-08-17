@@ -26,6 +26,9 @@ function App() {
           <Route exact path="/:media/:category/page/:page">
             <Category />
           </Route>
+          <Route exact path="/:media/:category/:searchParam/page/:page">
+            <Category />
+          </Route>
           <Route path="/:media/:id">
             <Detail />
           </Route>

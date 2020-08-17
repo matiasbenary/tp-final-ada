@@ -6,8 +6,14 @@ import { useTitle } from "../../utils/hooks/useTitle";
 import Pagination from "../Pagination";
 
 const Category = () => {
-  const { media, category, page } = useParams();
-  const [data, isLoading, isError] = useSearch(media, category, page);
+  const { media, category, page, searchParam } = useParams();
+
+  const [data, isLoading, isError] = useSearch(
+    media,
+    category,
+    page,
+    searchParam
+  );
   const title = useTitle(media, category);
 
   if (isLoading) {
