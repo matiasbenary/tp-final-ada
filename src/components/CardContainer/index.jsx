@@ -12,7 +12,7 @@ const CardContainer = ({ cards = [], media }) => {
           }`}
           title={card.title || card.name}
           subtitle={card.character}
-          media={media}
+          media={media === "multi" ? card.media_type : media}
           id={card.id}
         />
       ))}
