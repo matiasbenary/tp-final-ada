@@ -36,7 +36,7 @@ const Detail = () => {
           <Seasons id={id} />
         </Route>
         <Route path={`${path}/videos`}>
-          <Videos media={media} />
+          <Videos media={media} id={id} />
         </Route>
         <Route path={`${path}/cast`}>
           <Cast media={media} id={id} />
