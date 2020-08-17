@@ -21,7 +21,10 @@ const CategoryPreview = ({ media, category }) => {
           <h1 className="categoryPreview--title">{title}</h1>
           <FiArrowRight className="categoryPreview--icon" />
         </Link>
-        <CardContainer cards={data.results.slice(0, 5)}></CardContainer>
+        <CardContainer
+          media={media}
+          cards={data.results.slice(0, 5)}
+        ></CardContainer>
       </div>
     );
   }

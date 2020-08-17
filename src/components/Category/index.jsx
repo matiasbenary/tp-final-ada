@@ -17,7 +17,7 @@ const Category = () => {
     return (
       <div>
         <h1>{title}</h1>
-        <CardContainer cards={data.results}></CardContainer>
+        <CardContainer media={media} cards={data.results}></CardContainer>
         <Pagination
           media={media}
           category={category}

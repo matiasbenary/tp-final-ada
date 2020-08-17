@@ -1,7 +1,7 @@
 const { useGet } = require("./useGet");
 const { URL_BASE } = require("../../constants/api");
 //media="tv" search="on_the_air"
-export const useSearch = (media, search, page = 1) => {
+export const useSearch = (media, search, page = 1, language = "en-US") => {
   const endpoints = {
     trending: `trending/${media}/week`,
     category: `${media}/${search}`,
@@ -25,6 +25,6 @@ export const useSearch = (media, search, page = 1) => {
   //query=asd
 
   return useGet(
-    `${URL_BASE}/${endpoint}?api_key=${process.env.REACT_APP_API_KEY}&page=${page}${query}`
+    `${URL_BASE}/${endpoint}?api_key=${process.env.REACT_APP_API_KEY}&page=${page}${query}&languge=${language}`
   );
 };

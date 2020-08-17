@@ -2,11 +2,11 @@ import React from "react";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import CategoryPreview from "./components/CategoryPreview";
 import Category from "./components/Category";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import Tv from "./pages/Tv";
+import Detail from "./pages/Detail";
 
 function App() {
   return (
@@ -25,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/:media/:category/page/:page">
             <Category />
+          </Route>
+          <Route path="/:media/:id">
+            <Detail />
           </Route>
         </Switch>
       </div>
