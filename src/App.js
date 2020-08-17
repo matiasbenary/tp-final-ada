@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import Tv from "./pages/Tv";
 import Detail from "./pages/Detail";
+import Person from "./pages/Person";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route exact path="/:media/:category/:searchParam/page/:page">
             <Category />
+          </Route>
+          <Route path="/person/:id">
+            <Person />
           </Route>
           <Route path="/:media/:id">
             <Detail />
