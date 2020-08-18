@@ -1,0 +1,10 @@
+.externalLinks--icon {
+  font-size: 30px;
+  margin-right: 10px;
+  transform: scale(1);
+  transition: all 0.3s ease 0s;
+  &:hover {
+    color: $primary;
+    transform: scale(1.1);
+  }
+}

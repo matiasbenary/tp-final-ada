@@ -1,0 +1,36 @@
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.info--img {
+  width: 250px;
+}
+
+.info--detail {
+  max-width: 600px;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.info--title {
+  font-size: 32px;
+  font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+.info--item {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+.info--genre {
+  display: inline;
+  margin: 5px;
+  cursor: pointer;
+  color: $primary;
+}

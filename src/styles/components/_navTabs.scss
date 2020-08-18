@@ -1,0 +1,22 @@
+.navTabs--conatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.navTabs--links {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: bold;
+  color: $darkerText;
+  padding-bottom: 10px;
+  &:hover {
+    color: $text;
+  }
+  &__active {
+    color: $text;
+    border-bottom: 2px solid $text;
+  }
+}

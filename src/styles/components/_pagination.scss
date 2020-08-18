@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid blue;
+}
+
+.pagination--item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 3px;
+  font-size: 14px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $backgroundLight;
+  }
+  &__active {
+    background-color: $backgroundLight;
+  }
+  // border: 1px solid black;
+}

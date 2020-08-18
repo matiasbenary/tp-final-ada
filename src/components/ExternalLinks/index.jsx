@@ -1,6 +1,13 @@
 import React from "react";
+import {
+  FaImdb,
+  FaTwitter,
+  FaFacebookSquare,
+  FaInstagram,
+  FaLink,
+} from "react-icons/fa";
 
-const ExternalLinks = ({ linkIds }) => {
+const ExternalLinks = ({ linkIds, classname }) => {
   const { facebook_id, imdb_id, instagram_id, twitter_id, homepage } = linkIds;
   /*            
     facebook_id,
@@ -10,20 +17,32 @@ const ExternalLinks = ({ linkIds }) => {
     homepage, 
   */
   return (
-    <div>
+    <div className={classname}>
       {imdb_id && (
-        <a href={`https://www.imdb.com/title/${imdb_id}`}>Imdb Icon</a>
+        <a href={`https://www.imdb.com/title/${imdb_id}`}>
+          <FaImdb className="externalLinks--icon" />
+        </a>
       )}
       {twitter_id && (
-        <a href={`https://www.twitter.com/${twitter_id}`}>twitter Icon</a>
+        <a href={`https://www.twitter.com/${twitter_id}`}>
+          <FaTwitter className="externalLinks--icon" />
+        </a>
       )}
       {facebook_id && (
-        <a href={`https://www.facebook.com/${facebook_id}`}>Facebook Icon</a>
+        <a href={`https://www.facebook.com/${facebook_id}`}>
+          <FaFacebookSquare className="externalLinks--icon" />
+        </a>
       )}
       {instagram_id && (
-        <a href={`https://www.instagram.com/${instagram_id}`}>Instagram Icon</a>
+        <a href={`https://www.instagram.com/${instagram_id}`}>
+          <FaInstagram className="externalLinks--icon" />
+        </a>
       )}
-      {homepage && <a href={homepage}>Home Icon</a>}
+      {homepage && (
+        <a href={homepage}>
+          <FaLink className="externalLinks--icon" />
+        </a>
+      )}
     </div>
   );
 };

@@ -22,7 +22,8 @@ const Category = () => {
   if (data) {
     return (
       <div>
-        <h1>{title}</h1>
+        <h1 className="category--title">{title}</h1>
+
         <CardContainer media={media} cards={data.results}></CardContainer>
         <Pagination
           media={media}

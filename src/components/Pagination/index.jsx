@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const getItems = (current, totalPage, getUrl) => {
   const offset = 2;
@@ -53,7 +54,15 @@ currentPage = 450
   }
 
   for (let indice = lowerLimit; indice <= upperLimit; indice++) {
-    aux.push(<Link to={getUrl(indice)}>{indice}</Link>);
+    aux.push(
+      <Link
+        className={`pagination--item 
+        ${indice === current && "pagination--item__active"}`}
+        to={getUrl(indice)}
+      >
+        {indice}
+      </Link>
+    );
   }
 
   return aux;
@@ -64,16 +73,24 @@ const Pagination = ({ media, category, page, totalPage }) => {
     return `/${media}/${category}/page/${numPage}`;
   };
 
-  const before = page > 1 ? getUrl(Number(page) - 1) : null;
+  const previous = page > 1 ? getUrl(Number(page) - 1) : null;
   const next = page < totalPage ? getUrl(Number(page) + 1) : null;
 
   const items = getItems(Number(page), totalPage, getUrl);
 
   return (
-    <div>
-      {before && <Link to={before}>Anterior</Link>}
-      <h3>{items}</h3>
-      {next && <Link to={next}>Siguiente</Link>}
+    <div className="pagination">
+      {previous && (
+        <Link to={previous}>
+          <FiArrowLeft className="pagination--item" />
+        </Link>
+      )}
+      {items}
+      {next && (
+        <Link to={next}>
+          <FiArrowRight className="pagination--item" />
+        </Link>
+      )}
     </div>
   );
 };

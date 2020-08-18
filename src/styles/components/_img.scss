@@ -1,0 +1,15 @@
+.img--default {
+  position: relative;
+  width: 100%;
+  padding-top: 150%;
+  background-color: $dark;
+}
+
+.img--default--icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+  color: $text;
+}
