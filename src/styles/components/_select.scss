@@ -1,0 +1,17 @@
+.select {
+  border-radius: 6px;
+  padding: 3px 31px 3px 16px;
+  background-color: $dark;
+  border: 1px solid $text;
+  color: $text;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 30px;
+  -webkit-appearance: none;
+}
+
+.selectConataier {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}

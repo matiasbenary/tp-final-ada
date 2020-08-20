@@ -1,0 +1,20 @@
+.episodeCard {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.episodeCard--overview {
+  color: $text;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.episodeCard--title {
+  margin: 25px 0;
+}
+
+.episodeCard--title__blue {
+  color: $primary;
+}

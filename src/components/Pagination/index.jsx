@@ -56,6 +56,7 @@ currentPage = 450
   for (let indice = lowerLimit; indice <= upperLimit; indice++) {
     aux.push(
       <Link
+        key={`pagination${indice}`}
         className={`pagination--item 
         ${indice === current && "pagination--item__active"}`}
         to={getUrl(indice)}
@@ -68,9 +69,9 @@ currentPage = 450
   return aux;
 };
 
-const Pagination = ({ media, category, page, totalPage }) => {
+const Pagination = ({ url, page, totalPage }) => {
   const getUrl = (numPage) => {
-    return `/${media}/${category}/page/${numPage}`;
+    return `/${url}/page/${numPage}`;
   };
 
   const previous = page > 1 ? getUrl(Number(page) - 1) : null;

@@ -3,7 +3,7 @@ import CategoryPreview from "../../components/CategoryPreview";
 
 const Tv = () => {
   return (
-    <div>
+    <div className="container">
       <CategoryPreview media="tv" category="popular" />
       <CategoryPreview media="tv" category="top_rated" />
       <CategoryPreview media="tv" category="on_the_air" />

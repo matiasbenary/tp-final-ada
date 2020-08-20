@@ -1,0 +1,25 @@
+.detail {
+  width: 100%;
+}
+
+.detail--bannerContainer {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  position: relative;
+}
+
+.detail--bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail--bannerOverlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #000 0, transparent 50%, transparent);
+}

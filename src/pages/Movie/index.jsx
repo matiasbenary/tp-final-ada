@@ -3,7 +3,7 @@ import CategoryPreview from "../../components/CategoryPreview";
 
 const Movie = () => {
   return (
-    <div>
+    <div className="container">
       <CategoryPreview media="movie" category="popular" />
       <CategoryPreview media="movie" category="top_rated" />
       <CategoryPreview media="movie" category="upcoming" />

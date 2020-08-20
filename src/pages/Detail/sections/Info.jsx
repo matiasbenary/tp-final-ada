@@ -1,5 +1,4 @@
 import React from "react";
-import { useSearch } from "../../../utils/hooks/useSearch";
 import { useDetail } from "../../../utils/hooks/useDetail";
 import { Link } from "react-router-dom";
 import ExternalLinks from "../../../components/ExternalLinks";
@@ -49,7 +48,7 @@ const Info = ({ media, id }) => {
               <Link
                 className="info--genre"
                 key={genre.id}
-                to={`/movie/${genre.name}/${genre.id}/page/1`}
+                to={`/${media}/${genre.name}/${genre.id}/page/1`}
               >
                 {genre.name}
               </Link>

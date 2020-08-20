@@ -1,7 +1,6 @@
 import { getApiUrl } from "../lib/getApiUrl";
 
 const { useGet } = require("./useGet");
-const { URL_BASE } = require("../../constants/api");
 //media="tv" search="on_the_air"
 export const useSearch = (media, search, page = 1, searchParam = "") => {
   const endpoints = {

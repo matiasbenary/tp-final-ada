@@ -13,31 +13,29 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className="container">
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/movie">
-            <Movie />
-          </Route>
-          <Route exact path="/tv">
-            <Tv />
-          </Route>
-          <Route exact path="/:media/:category/page/:page">
-            <Category />
-          </Route>
-          <Route exact path="/:media/:category/:searchParam/page/:page">
-            <Category />
-          </Route>
-          <Route path="/person/:id">
-            <Person />
-          </Route>
-          <Route path="/:media/:id">
-            <Detail />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/movie">
+          <Movie />
+        </Route>
+        <Route exact path="/tv">
+          <Tv />
+        </Route>
+        <Route exact path="/:media/:category/page/:page">
+          <Category />
+        </Route>
+        <Route exact path="/:media/:category/:searchParam/page/:page">
+          <Category />
+        </Route>
+        <Route path="/person/:id">
+          <Person />
+        </Route>
+        <Route path="/:media/:id">
+          <Detail />
+        </Route>
+      </Switch>
     </Router>
   );
 }

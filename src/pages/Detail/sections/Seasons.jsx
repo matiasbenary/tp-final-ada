@@ -15,15 +15,17 @@ const Seasons = ({ id }) => {
   if (data && seasonData) {
     const { episodes = [] } = seasonData;
     return (
-      <div>
-        <select onChange={handleSeasonChange}>
-          {data.seasons.map((dataSeason) => (
-            <option key={dataSeason.id} value={dataSeason.season_number}>
-              Temporada: {dataSeason.season_number}
-            </option>
-          ))}
-        </select>
-        <div>
+      <div className="seasons">
+        <div className="selectConataier">
+          <select className="select" onChange={handleSeasonChange}>
+            {data.seasons.map((dataSeason) => (
+              <option key={dataSeason.id} value={dataSeason.season_number}>
+                Temporada: {dataSeason.season_number}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="seasons--episodes">
           {episodes.map((episode) => (
             <EpisodeCard
               key={episode.id}
