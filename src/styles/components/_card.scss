@@ -9,6 +9,22 @@
   &:hover img {
     transform: scale(1.05);
   }
+
+  @media (max-width: 1200px) {
+    width: 25%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 33%;
+  }
+
+  @media (max-width: 650px) {
+    width: 50%;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 }
 
 .card--img--wrapper {

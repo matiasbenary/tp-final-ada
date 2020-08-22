@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { useTitle } from "../../utils/hooks/useTitle";
 import { useSearch } from "../../utils/hooks/useSearch";
 import { FiArrowRight } from "react-icons/fi";
+import { useBreackpoint } from "../../utils/hooks/useBreackpoin";
 
 const CategoryPreview = ({ media, category }) => {
   const [data, isLoading] = useSearch(media, category);
 
   const title = useTitle(media, category);
+  const breackpoint = useBreackpoint();
 
   if (isLoading) return <h1>Cargando...</h1>;
   if (data) {
@@ -23,7 +25,7 @@ const CategoryPreview = ({ media, category }) => {
         </Link>
         <CardContainer
           media={media}
-          cards={data.results.slice(0, 5)}
+          cards={data.results.slice(0, breackpoint)}
         ></CardContainer>
       </div>
     );
