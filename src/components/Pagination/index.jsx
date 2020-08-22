@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const getItems = (current, totalPage, getUrl) => {
@@ -69,9 +69,14 @@ currentPage = 450
   return aux;
 };
 
-const Pagination = ({ url, page, totalPage }) => {
+const Pagination = ({ page, totalPage }) => {
+  const { url } = useRouteMatch();
+  let urlFinal = url.split("/");
+  urlFinal.pop();
+  urlFinal = urlFinal.join("/");
+
   const getUrl = (numPage) => {
-    return `/${url}/page/${numPage}`;
+    return `${urlFinal}/${numPage}`;
   };
 
   const previous = page > 1 ? getUrl(Number(page) - 1) : null;

@@ -20,11 +20,7 @@ const Category = () => {
         <h1 className="category--title">{title}</h1>
 
         <CardContainer media={media} cards={data.results}></CardContainer>
-        <Pagination
-          url={`${media}/${category}/${searchParam ? `/${searchParam}/` : ""}`}
-          page={page}
-          totalPage={data.total_pages}
-        ></Pagination>
+        <Pagination page={page} totalPage={data.total_pages}></Pagination>
       </div>
     );
   }
